@@ -8,7 +8,7 @@ import Footer from "../Navbar/footer";
 import Mens_banner from "../Assets/banner_mens.png";
 import Womens_banner from "../Assets/banner_women.png";
 import kids_banner from "../Assets/banner_kids.png";
-import "../HomePage/HomePage.css";
+import "./HomePage.css"
 
 const HomePage = () => {
   const [womenProducts, setWomenProducts] = useState([]);
@@ -98,7 +98,7 @@ const HomePage = () => {
       </div>
 
       <div className="container mt-4">
-        <h1>Women's Section</h1>
+        <h1 className='women'  >Women's Section</h1>
         <div className="scroll-section position-relative">
           <button onClick={() => scroll("product-scroll-womens", 'left')} className="scroll-btn left">←</button>
           <div id="product-scroll-womens" className="product-scroll-container d-flex flex-nowrap overflow-hidden">

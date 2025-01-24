@@ -27,8 +27,7 @@ const LoginSignup = () => {
   const dispatch = useDispatch();
   const [resetEmail, setResetEmail] = useState("");
   const [showResetForm, setShowResetForm] = useState(false); // Define the states here
-  const { loading, error } = useSelector((state) => state.auth);
-
+  const { loading,error} = useSelector((state) => state.user || { loading: false, user: null });
   const validateUsername = (username) => {
     const usernameRegex = /^[a-zA-Z0-9_-]{3,16}$/;
     return usernameRegex.test(username);

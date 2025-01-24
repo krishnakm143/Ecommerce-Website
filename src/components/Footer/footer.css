@@ -1,0 +1,165 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.footer-bg {
+  background-color: whitesmoke;
+  padding: 40px 0;
+  color: #333;
+}
+
+.footer-content {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-content .col-md-3,
+.footer-content .col-md-4,
+.footer-content .col-md-5,
+.footer-content .col-sm-8 {
+  padding: 15px;
+  flex: 1 0 21%; 
+  box-sizing: border-box;
+}
+
+
+.ftr-site-logo img {
+  max-width: 110px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.ftr-about .social h5 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.ftr-about .social ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.ftr-about .social ul li {
+  display: inline;
+}
+
+.ftr-about .social ul li a img {
+  width: 24px;
+  height: 24px;
+}
+
+
+.ftr-links .links-blk {
+  margin-bottom: 20px;
+}
+
+.ftr-links .l-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.ftr-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ftr-links ul li {
+  margin-bottom: 5px;
+}
+
+.ftr-links ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.ftr-links ul li a:hover {
+  text-decoration: underline;
+}
+
+
+.ftr-newsletter .form-blk {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.ftr-newsletter h4 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.input01 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input01 input[type="email"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.input01 .submit-btn img {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.mail-desc {
+  font-size: 14px;
+  color: #777;
+}
+.copy-right {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+.copy-right span {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .footer-content .col-md-3,
+  .footer-content .col-md-4,
+  .footer-content .col-md-5,
+  .footer-content .col-sm-8 {
+    flex: 1 0 100%;
+  }
+
+  .ftr-site-logo img,
+  .ftr-newsletter .form-blk {
+    margin: 0 auto;
+  }
+
+  .ftr-about .social ul {
+    justify-content: center;
+  }
+}
+
+figure {
+  margin: 0 0 1rem;
+}
+
+footer {
+  padding: 20px;
+  margin-top: 20px;
+}

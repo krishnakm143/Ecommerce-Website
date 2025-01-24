@@ -1,0 +1,322 @@
+/* Base styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.product-detail {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image-gallery {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnail-images {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.thumbnail-images img {
+  width: 60px;
+  height: 60px;
+  margin: 0 5px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail-images img:hover {
+  transform: scale(1.1);
+}
+
+.product-info {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.product-info h1 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.product-size,
+.product-price,
+.product-description,
+.product-quantity,
+.offers,
+.product-additional-info {
+  margin-bottom: 15px;
+}
+
+.product-price {
+  color: #e91e63;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.product-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  font-size: 1em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+  background-color: #0056b3;
+}
+
+.quantity-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#quantity {
+  width: 50px;
+  text-align: center;
+  margin: 0 10px;
+  border: 1px solid #ddd;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.buy-now-btn,
+.add-to-cart-btn {
+  background-color: #8a2be2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-right: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.buy-now-btn:hover,
+.add-to-cart-btn:hover {
+  background-color: #551a8b;
+}
+
+.offers {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.offers p {
+  font-weight: bold;
+}
+
+.offers ul {
+  padding-left: 20px;
+}
+
+.offers li {
+  list-style-type: disc;
+}
+
+.product-additional-info {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+.product-tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.tab-link {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  margin-right: 2px;
+  font-weight: bold;
+  text-align: center;
+  width: 100px;
+  border-radius: 4px 4px 0 0;
+  transition: background-color 0.3s ease;
+}
+
+.tab-link.active,
+.tab-link:hover {
+  background-color: #8a2be2;
+  color: white;
+}
+
+.tab-content {
+  display: none;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-top: none;
+  background-color: white;
+  border-radius: 0 0 4px 4px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.similar-products {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.similar-products h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.similar-products-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.similar-product-item {
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 200px;
+  text-align: center;
+}
+
+.similar-product-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.similar-product-item h3 {
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.similar-product-item p {
+  font-size: 1em;
+  color: #e91e63;
+  font-weight: bold;
+}
+
+.similar-product-item:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .product-detail {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .product-info {
+    padding-left: 0;
+  }
+
+  .product-info h1 {
+    font-size: 1.5em;
+  }
+
+  .quantity-btn,
+  .buy-now-btn,
+  .add-to-cart-btn {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+
+  .tab-link {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+
+  .tab-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-detail {
+    padding: 10px;
+  }
+
+  .product-info {
+    padding-left: 0;
+  }
+
+  .product-info h1 {
+    font-size: 1.2em;
+  }
+
+  .quantity-btn,
+  .buy-now-btn,
+  .add-to-cart-btn {
+    font-size: 0.8em;
+    padding: 6px 12px;
+  }
+
+  #quantity {
+    width: 40px;
+  }
+
+  .tab-link {
+    font-size: 0.8em;
+    padding: 6px;
+  }
+
+  .tab-content {
+    padding: 10px;
+  }
+
+  .similar-product-item {
+    width: 150px;
+  }
+}
+
+footer {
+  background-color: #ffffff;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}

@@ -1,0 +1,45 @@
+/* Scroll button styles */
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .scroll-btn.left {
+    left:  -50px;
+    ;
+  }
+  
+  .scroll-btn.right {
+    right: -50px;
+
+  }
+  
+  /* Product scroll container */
+  .product-scroll-container {
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping */
+    padding: 10px 0;
+  }
+  
+  .product-scroll-container .col-md-4 {
+    flex: 0 0 auto;
+    width:  20.333333%;
+
+    max-width: 33.333333%;
+    padding: 0 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .product-scroll-container .col-md-4 {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  

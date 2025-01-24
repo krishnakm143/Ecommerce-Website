@@ -56,7 +56,8 @@ const MyAccount = () => {
       if (user) {
         const uid = user.uid;
         await setDoc(doc(db, "users", uid), userData);
-        console.log("Document successfully written!");
+      console.log("Document successfully written!");
+      alert("Save Changes successfully!")
       }
     } catch (error) {
       console.error("Error writing document: ", error);

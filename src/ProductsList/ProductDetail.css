@@ -225,18 +225,21 @@ body {
   height: auto;
   border-radius: 4px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .similar-product-item h3 {
   font-size: 1.2em;
   color: #333;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .similar-product-item p {
   font-size: 1em;
   color: #e91e63;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .similar-product-item:hover {

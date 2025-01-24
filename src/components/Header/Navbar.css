@@ -1,0 +1,155 @@
+
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #00000042;
+  border: 10px;
+  border-color: #00000042;
+  box-shadow: 0 5px 4px 0 rgba(0,0,0,.2);
+  text-align: center;
+  width: 100%;
+}
+.navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  background-color: whitesmoke
+
+}
+
+.navbar-nav {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  padding: 10px;
+  font-size: 20px;
+  font-family: math;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #000;
+}
+
+.nav-link::after {
+  content: '';
+  display: none;
+  width: 0;
+  height: 2px;
+  background: #da8e8e42;
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+.Nav_logo {
+  display: flex;
+  padding: 10px;
+  height: 100px;
+}
+
+@media(max-width:991px) {
+ 
+}
+
+@media(max-width:420px) {
+  .nav-item {
+    padding: 10px;
+    font-size: 11px;
+    font-family: math;
+  }
+  
+  .Nav_logo {
+    padding: 0;
+    height: 60px;
+  }
+
+
+}
+.d-flex {
+  margin-right: 20px;
+}
+.dropdown-menu[data-bs-popper] {
+  top: 100%;
+  left: -110px;
+  margin-top: var(--bs-dropdown-spacer);
+}
+/* styles.css */
+/* Style for the profile dropdown */
+.profile_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    list-style-type: none;
+}
+
+
+.profile-icon .nav-link {
+  color: #333;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.profile-icon .nav-link:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.profile-icon .dropdown-menu {
+  right: 0;
+  left: auto;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.profile-icon .dropdown-item {
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-align: left;
+}
+
+.profile-icon .dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.profile-icon .fa-user {
+  font-size: 1.25rem;
+}
+.nav-item dropdown{
+   list-style-type: none;
+}
+.profile{
+    list-style-type: none;
+
+}
+.dropdown{
+  list-style-type: none;
+  
+ 
+}
+.fa-user:before {
+  content: "\f007";
+  font-size: larger;
+  margin-top: 10px;
+  margin-right: 20px;
+}

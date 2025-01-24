@@ -6,6 +6,11 @@ import HomePage from './components/HomePage/HomePage';
 import ProductDetail from './ProductsList/ProductDetail';
 import MyAccount from './components/HomePage/MyAccount';
 import Mens from './components/HomePage/pages/mens'
+import Womens from './components/HomePage/pages/womens';
+import Kids from './components/HomePage/pages/kids';
+import Cart from './components/Navbar/cart';
+import Checkout from './components/Navbar/checkout';
+import Payment from './components/Navbar/payment';
 
 function App() {
   return (
@@ -18,7 +23,17 @@ function App() {
           <Route path="/" element={<LoginSignup />} />
           <Route path="/MyAccount" element={<MyAccount />} />
           <Route path="/mens" element={<Mens />} />
+          <Route path="/womens" element={<Womens />} />
+          <Route path="/kids" element={<Kids />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/payment" element={<Payment/>} />
+
+
+
           <Route path="/product/:productId" element={<ProductDetail />} />
+          <Route path="/ProductsList/ProductDetail/:productId" element={<ProductDetail />} />
+
         </Routes>
       </div>
     </Router>

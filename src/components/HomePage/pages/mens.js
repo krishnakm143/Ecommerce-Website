@@ -1,79 +1,82 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../../Navbar/Navbar';
-import { db } from '../..//Action/firebase'; // Adjust the path as needed
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { getDatabase, ref, get, child } from 'firebase/database';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { Link } from 'react-router-dom';
+import Navbar from "../../Navbar/Navbar";
+import Footer from "../../Navbar/footer";
+import Mens_banner from "../../Assets/banner_mens.png";
+import "./mens.css"
 
-const Mens = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+const MensPage = () => {
+  const [menProducts, setMenProducts] = useState([]);
   const [error, setError] = useState(null);
 
-  const fetchMensProducts = async () => {
-    try {
-      const products = [];
-      const q = query(collection(db, 'products'), where('category', '==', 'men'));
-      const querySnapshot = await getDocs(q);
-
-      if (querySnapshot.empty) {
-        console.log("No matching documents.");
-        setLoading(false);
-        return;
-      }
-
-      querySnapshot.forEach((doc) => {
-        const product = doc.data();
-        console.log("Product fetched: ", product); // Log each fetched product
-
-        // Check if imageUrl is present and valid
-        if (!product.imageUrl) {
-          console.error(`No imageUrl for product: ${product.name}`);
-        }
-
-        products.push({
-          id: doc.id,
-          ...product
-        });
-      });
-
-      setProducts(products);
-      setLoading(false);
-    } catch (error) {
-      console.error("Error fetching products: ", error);
-      setError(error);
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    fetchMensProducts();
+    const fetchMenProducts = async () => {
+      const dbRef = ref(getDatabase());
+      try {
+        const menSnapshot = await get(child(dbRef, 'products/mens'));
+
+        if (menSnapshot.exists()) {
+          const data = menSnapshot.val();
+          const productsArray = Object.keys(data).map(key => ({
+            id: key,
+            ...data[key]
+          }));
+          setMenProducts(productsArray);
+        } else {
+          console.log("No data available for men's products");
+        }
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+
+    fetchMenProducts();
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
 
   return (
     <div>
       <Navbar />
-      <div id="products">
-        {products.map(product => (
-          <div key={product.id} className="product">
-            <h2>{product.name}</h2>
-            <p>${product.price}</p>
-            {product.imageUrl ? (
-              <img src={product.imageUrl} alt={product.name} />
-            ) : (
-              <p>No image available</p>
-            )}
+      <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src={Mens_banner} className="d-block w-100" alt="Mens Banner" />
           </div>
-        ))}
+        </div>
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
+
+      <div className="container mt-4">
+        <h1>Men's Section</h1>
+            {error && <div className="alert alert-danger">{error}</div>}
+            {menProducts.map((product) => (
+              <div className="col-md-4 mb-4" key={product.id}>
+                <div className="card">
+                  <img src={product.imageURL} className="card-img-top" alt={product.title} />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.title}</h5>
+                    <p className="card-text">{product.description}</p>
+                    <Link to={`/product/${product.id}`} className="btn btn-primary">View Product</Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+      </div>
+
+      <Footer />
     </div>
   );
-}
+};
 
-export default Mens;
+export default MensPage;
