@@ -1,17 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom'; // Ensure you have only one import for ReactDOM
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import store from './Store'; // Ensure the correct relative path
+import store from '../src/reducers/store'; // Adjust path accordingly
+import App from './App';
 
 ReactDOM.render(
   <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <App />
   </Provider>,
   document.getElementById('root')
 );
-
-reportWebVitals();
