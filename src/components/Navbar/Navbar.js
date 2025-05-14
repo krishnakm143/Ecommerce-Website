@@ -3,6 +3,8 @@ import '../Navbar/Navbar.css';
 import Nav_logo from '../Assets/shopping.jpg';
 import { auth, db } from '../Action/firebase'; // Adjust the path as per your project structure
 import { getDoc, doc } from "firebase/firestore";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const Navbar = () => {
   const [userData, setUserData] = useState(null);
@@ -65,7 +67,7 @@ const Navbar = () => {
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {userData ? (
                   <>
-                    <i className="fas fa-user mx-1"></i>
+                     <i className="fas fa-user mx-1"></i>
                     Hi, {userData.name}
                   </>
                 ) : (
