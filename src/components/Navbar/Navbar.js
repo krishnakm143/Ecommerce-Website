@@ -3,12 +3,17 @@ import '../Navbar/Navbar.css';
 import Nav_logo from '../Assets/shopping.jpg';
 import { auth, db } from '../Action/firebase'; // Adjust the path as per your project structure
 import { getDoc, doc } from "firebase/firestore";
+
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+
 import { searchProductsInDatabase } from '../Action/Search'; // Import the search function
 import { useNavigate } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Link } from 'react-router-dom'; // Make sure React Router is set up
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../HomePage/cartslice';
+
 
 const Navbar = () => {
   const [userData, setUserData] = useState(null);
@@ -113,7 +118,7 @@ const Navbar = () => {
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {userData ? (
                   <>
-                    <i className="fas fa-user mx-1"></i>
+                     <i className="fas fa-user mx-1"></i>
                     Hi, {userData.name}
                   </>
                 ) : (
